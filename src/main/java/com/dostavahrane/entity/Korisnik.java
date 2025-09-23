@@ -1,6 +1,7 @@
 package com.dostavahrane.entity;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,7 @@ public class Korisnik {
     private String password;
     
     @OneToMany(mappedBy = "korisnik", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Porudzbina> porudzbine;
     
     // Constructors

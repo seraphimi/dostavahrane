@@ -1,6 +1,7 @@
 package com.dostavahrane.entity;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class Jelo {
     private Restoran restoran;
     
     @OneToMany(mappedBy = "jelo", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<StavkaPorudzbine> stavkePorudzbine;
     
     // Constructors

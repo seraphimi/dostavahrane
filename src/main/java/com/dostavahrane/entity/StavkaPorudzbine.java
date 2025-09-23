@@ -1,6 +1,7 @@
 package com.dostavahrane.entity;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "stavke_porudzbine")
@@ -12,6 +13,7 @@ public class StavkaPorudzbine {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "porudzbina_id", nullable = false)
+    @JsonIgnore
     private Porudzbina porudzbina;
     
     @ManyToOne(fetch = FetchType.LAZY)

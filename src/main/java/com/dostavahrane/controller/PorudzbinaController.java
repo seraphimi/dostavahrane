@@ -38,7 +38,7 @@ public class PorudzbinaController {
             Porudzbina.StatusPorudzbine status = Porudzbina.StatusPorudzbine.valueOf(statusString);
             Porudzbina updatedPorudzbina = porudzbinaService.updateStatus(id, status);
             return ResponseEntity.ok(updatedPorudzbina);
-        } catch (RuntimeException | IllegalArgumentException e) {
+        } catch (RuntimeException e) {
             return ResponseEntity.badRequest().build();
         }
     }
